@@ -4,7 +4,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
+    console.log("\nPlease choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -22,11 +22,11 @@ function randomPlay() {
 ////////////////////////////////////////////////
 
 
-function getPlayerMove(move) {
+function getPlayerMove() {
     return getInput();
 }
 
-function getComputerMove(move) {
+function getComputerMove() {
     return randomPlay();
 }
 
@@ -53,8 +53,7 @@ function getWinner(playerMove,computerMove) {
 }
 
 
-function playToFive() {
-    console.log("Let's play Rock, Paper, Scissors");
+function playTo(x) {
     var playerMove;
     var computerMove;
     var playerWins = 0;
@@ -62,7 +61,7 @@ function playToFive() {
     var whoWon;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
 
-   while ((computerWins < 5) && (playerWins < 5)) {
+   while ((computerWins < x) && (playerWins < x)) {
        playerMove = getPlayerMove();
        computerMove = getComputerMove();
        console.log("The computer chose: " + computerMove + '\n');
@@ -76,12 +75,26 @@ function playToFive() {
    }
 
     if(playerWins > computerWins)
-        console.log("You win!!");
+        console.log("You are the Ultimate Champion!!");
     else if(computerWins > playerWins)
-        console.log("The computer wins!!");
+        console.log("The computer is the Ultimate Champion!!");
     else
         console.log("There was an error.");
-
 }
 
-playToFive();
+
+function getRounds() {
+    console.log("How many wins should we require in order to win the game?");
+    return prompt();
+}
+
+
+function play(){
+    var rounds;
+    console.log("Let's play Rock, Paper, Scissors!");
+    rounds= getRounds();
+    console.log("OK! Whoever wins " + rounds + " is the Ultimate Champion. Let's go.");
+    playTo(rounds);
+}
+
+play();
