@@ -88,7 +88,7 @@ function getRounds() {
     return prompt();
 }
 
-
+//new function allows player to choose number of wins required to win the game
 function play(){
     var rounds;
     console.log("Let's play Rock, Paper, Scissors!");
@@ -98,3 +98,4 @@ function play(){
 }
 
 play();
+
